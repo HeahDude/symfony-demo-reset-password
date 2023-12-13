@@ -19,6 +19,23 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        main_reset_password:
+            pattern: ^/(en|fr)/(forgot|reset)-password
+            lazy: true
+            provider: database_users
+            login_link:
+                check_route: security_login_link_check
+                signature_properties:
+                    - username
+                    - email
+                    - password
+                max_uses: 1
+                login_path: security_login
+                always_use_default_target_path: true
+                default_target_path: security_reset_password
+            logout:
+                target: homepage
+
         main:
             # this firewall does not have a 'pattern' option because it applies to all URLs
             lazy: true
@@ -54,17 +71,6 @@ security:
                 # Secure the logout against CSRF
                 enable_csrf: true
 
-            login_link:
-                check_route: security_login_link_check
-                check_post_only: true
-                signature_properties:
-                    - username
-                    - email
-                    - password
-                max_uses: 1
-                login_path: security_login
-                success_handler: App\Security\LoginLinkSuccessHandler
-
             # needed because in tests we redefine the 'main' firewall to use
             # HTTP Basic instead of the login form, so this firewall has
             # multiple authenticators
@@ -77,7 +83,7 @@ security:
         # this is a catch-all for the admin area
         # additional security lives in the controllers
         - { path: '^/(%app_locales%)/admin', roles: ROLE_ADMIN }
-        - { path: '^/(%app_locales%)/reset-password', allow_if: 'token.hasAttribute("login_link")' }
+        - { path: '^/(%app_locales%)/reset-password', roles: ROLE_USER }
 
     # The ROLE_ADMIN role inherits from the ROLE_USER role
     role_hierarchy:

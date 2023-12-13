@@ -81,7 +81,7 @@ final class SecurityController extends AbstractController
         return $this->render('security/forgot_password.html.twig');
     }
 
-    #[Route('/login-link', name: 'security_login_link_confirm', methods: ['GET'])]
+    #[Route('/reset-password/login-link', name: 'security_login_link_confirm', methods: ['GET'])]
     public function loginLink(Request $request): Response
     {
         return $this->render('security/login_link.html.twig', [
@@ -91,7 +91,7 @@ final class SecurityController extends AbstractController
         ]);
     }
 
-    #[Route('/login-link', name: 'security_login_link_check', methods: ['POST'])]
+    #[Route('/reset-password/login-link', name: 'security_login_link_check', methods: ['POST'])]
     public function loginLinkCheck(): never
     {
         throw new \LogicException('Check the configuration of "security.firewalls.main.login_link.check_route".');
