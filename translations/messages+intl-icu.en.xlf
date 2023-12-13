@@ -104,6 +104,10 @@
                 <source>title.change_password</source>
                 <target>Change password</target>
             </trans-unit>
+            <trans-unit id="title.confirm_login_link">
+                <source>title.confirm_login_link</source>
+                <target>Confirmation of resetting password</target>
+            </trans-unit>
 
             <trans-unit id="action.show">
                 <source>action.show</source>
@@ -266,6 +270,10 @@
                 <source>action.edit_contents</source>
                 <target>Edit contents</target>
             </trans-unit>
+            <trans-unit id="action.confirm_login_link">
+                <source>action.confirm_login_link</source>
+                <target>Continue</target>
+            </trans-unit>
 
             <trans-unit id="menu.toggle_nav">
                 <source>menu.toggle_nav</source>
@@ -423,6 +431,10 @@
             <trans-unit id="info.change_password">
                 <source>info.change_password</source>
                 <target>After changing your password, you will be logged out of the application.</target>
+            </trans-unit>
+            <trans-unit id="info.login_link">
+                <source>info.login_link</source>
+                <target>You're about to change your password, click on the button below to confirm.</target>
             </trans-unit>
 
             <trans-unit id="rss.title">

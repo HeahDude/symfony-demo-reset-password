@@ -104,6 +104,10 @@
                 <source>title.change_password</source>
                 <target>Modifier le mot de passe</target>
             </trans-unit>
+            <trans-unit id="title.confirm_login_link">
+                <source>title.confirm_login_link</source>
+                <target>Confirmation de la réinitialisation du mot de passe</target>
+            </trans-unit>
 
             <trans-unit id="action.show">
                 <source>action.show</source>
@@ -266,6 +270,10 @@
                 <source>action.edit_contents</source>
                 <target>Modifier le contenu</target>
             </trans-unit>
+            <trans-unit id="action.confirm_login_link">
+                <source>action.confirm_login_link</source>
+                <target>Continuer</target>
+            </trans-unit>
 
             <trans-unit id="menu.toggle_nav">
                 <source>menu.toggle_nav</source>
@@ -423,6 +431,10 @@
             <trans-unit id="info.change_password">
                 <source>info.change_password</source>
                 <target>Après avoir modifié votre mot de passe, vous serez déconnecté de l'application.</target>
+            </trans-unit>
+            <trans-unit id="info.login_link">
+                <source>info.login_link</source>
+                <target>Vous êtes sur le point de changer votre mot de passe, cliquez sur le bouton en-dessous pour confirmer.</target>
             </trans-unit>
 
             <trans-unit id="rss.title">

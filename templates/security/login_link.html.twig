@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'confirm_login_link' %}
+
+{% block main %}
+    <h1>{{ 'title.confirm_login_link'|trans }}</h1>
+
+    <div class="alert alert-info" role="alert">
+        <p>
+            {{ 'info.login_link'|trans }}
+        </p>
+
+        <form action="{{ path('security_login_link_check') }}" method="post">
+            <input type="hidden" name="expires" value="{{ expires }}">
+            <input type="hidden" name="user" value="{{ user }}">
+            <input type="hidden" name="hash" value="{{ hash }}">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.confirm_login_link'|trans }}
+            </button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block sidebar '' %}

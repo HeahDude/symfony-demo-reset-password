@@ -55,7 +55,8 @@ security:
                 enable_csrf: true
 
             login_link:
-                check_route: security_login_link
+                check_route: security_login_link_check
+                check_post_only: true
                 signature_properties:
                     - username
                     - email
