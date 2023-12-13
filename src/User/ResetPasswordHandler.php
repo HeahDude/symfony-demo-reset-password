@@ -4,7 +4,7 @@ namespace App\User;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Bridge\Twig\Mime\NotificationEmail;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Security\Http\LoginLink\LoginLinkHandlerInterface;
 
@@ -32,14 +32,12 @@ class ResetPasswordHandler
 
     private function sendEmail(User $user): void
     {
-        $email = (new TemplatedEmail())
+        $email = NotificationEmail::asPublicEmail()
             ->from('blog@example.org')
             ->to($user->getEmail())
-            ->htmlTemplate('mail/reset_password.html.twig')
-            ->context([
-                // link is valid for 10 minutes
-                'login_link' => $this->loginLinkHandler->createLoginLink($user, null, 600),
-            ])
+            ->subject('Resetting your password')
+            ->content('You ask to reset your password. To proceed, click on the link below.')
+            ->action('Reset password', $this->loginLinkHandler->createLoginLink($user, null, 600))
         ;
 
         $this->mailer->send($email);
