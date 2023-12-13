@@ -76,6 +76,10 @@
                 <source>title.login</source>
                 <target>Secure Sign in</target>
             </trans-unit>
+            <trans-unit id="title.reset_password">
+                <source>title.reset_password</source>
+                <target>Resetting password</target>
+            </trans-unit>
             <trans-unit id="title.post_list">
                 <source>title.post_list</source>
                 <target>Post List</target>
@@ -441,6 +445,26 @@
             <trans-unit id="paginator.current">
                 <source>paginator.current</source>
                 <target>(current)</target>
+            </trans-unit>
+
+            <trans-unit id="security.forgot_password.title">
+                <source>security.forgot_password.title</source>
+                <target>Forgot password?</target>
+            </trans-unit>
+
+            <trans-unit id="security.forgot_password.send">
+                <source>security.forgot_password.send</source>
+                <target>Send</target>
+            </trans-unit>
+
+            <trans-unit id="security.forgot_password.invalid_token">
+                <source>security.forgot_password.invalid_token</source>
+                <target>Invalid token.</target>
+            </trans-unit>
+
+            <trans-unit id="security.forgot_password.link_sent">
+                <source>security.forgot_password.link_sent</source>
+                <target>Check your mailbox and click the link to reset your password.</target>
             </trans-unit>
         </body>
     </file>

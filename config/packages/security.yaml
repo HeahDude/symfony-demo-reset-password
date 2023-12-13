@@ -54,6 +54,16 @@ security:
                 # Secure the logout against CSRF
                 enable_csrf: true
 
+            login_link:
+                check_route: security_login_link
+                signature_properties:
+                    - username
+                    - email
+                    - password
+                max_uses: 1
+                login_path: security_login
+                success_handler: App\Security\LoginLinkSuccessHandler
+
             # needed because in tests we redefine the 'main' firewall to use
             # HTTP Basic instead of the login form, so this firewall has
             # multiple authenticators
@@ -66,6 +76,7 @@ security:
         # this is a catch-all for the admin area
         # additional security lives in the controllers
         - { path: '^/(%app_locales%)/admin', roles: ROLE_ADMIN }
+        - { path: '^/(%app_locales%)/reset-password', allow_if: 'token.hasAttribute("login_link")' }
 
     # The ROLE_ADMIN role inherits from the ROLE_USER role
     role_hierarchy:

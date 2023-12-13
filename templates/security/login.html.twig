@@ -38,6 +38,13 @@
                                 Keep me logged in
                             </label>
                         </div>
+
+                        <div class="form-group">
+                            <a href="{{ path('security_forgot_password') }}">
+                                {{ 'security.forgot_password.title'|trans }}
+                            </a>
+                        </div>
+
                         <input type="hidden" name="_target_path" value="{{ app.request.get('redirect_to') }}"/>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
                         <button type="submit" class="btn btn-primary">
